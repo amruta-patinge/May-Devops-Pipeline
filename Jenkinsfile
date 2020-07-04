@@ -16,7 +16,9 @@ agent any
     {sh 'echo buding the code'}
    }
    stage ('get approval')
+    {steps
    {input "please approve the deployment?" }
+    }
    
    stage('deployment')
    {steps
