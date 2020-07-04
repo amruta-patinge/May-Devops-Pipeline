@@ -2,7 +2,8 @@ pipeline
 {
 agent any
   stages
-  { stage ('git clone')
+  { 
+    stage ('git clone')
    {steps
     { sh 'echo downloading code' }
    }
@@ -10,6 +11,17 @@ agent any
    {steps
     {sh 'echo compiling code'}
    }
+   stage ('code build')
+   {steps
+    {sh 'echo buding the code'}
+   }
+   stage ('get approval')
+   {input "please approve the deployment?" }
+   
+   stage('deployment')
+   {steps
+    {sh 'echo deploying the job' }
+      } 
   }
 }
    
