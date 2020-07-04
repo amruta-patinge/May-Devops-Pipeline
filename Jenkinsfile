@@ -4,11 +4,11 @@ agent any
   stages
   { stage ('git clone')
    {steps
-    { sh 'downloading code' }
+    { sh 'echo downloading code' }
    }
    stage ('compile code')
    {steps
-    {sh 'compiling code'}
+    {sh 'echo compiling code'}
    }
   }
 }
